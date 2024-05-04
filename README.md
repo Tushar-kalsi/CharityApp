@@ -49,4 +49,4 @@ To deploy just run
 ## Working Video 
 ![]("https://drive.google.com/file/d/1CGSm5US3u0dUGLaITmCKRoMog2yAzIE2/preview")
 
-[Video ](VIDEO_URL "https://drive.google.com/file/d/1CGSm5US3u0dUGLaITmCKRoMog2yAzIE2/preview")
+[Video ]("https://drive.google.com/file/d/1CGSm5US3u0dUGLaITmCKRoMog2yAzIE2/view?usp=sharing")
