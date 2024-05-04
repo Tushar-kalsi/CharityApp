@@ -1,0 +1,516 @@
+{
+  "address": "92yBtPmAVtLPnqxvsQ1cMbkgM5DonthohKGZHf1CBkft",
+  "metadata": {
+    "name": "donation_platform",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "donate_platform",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  111,
+                  110,
+                  97,
+                  116,
+                  101,
+                  95,
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "top_donators",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  111,
+                  112,
+                  95,
+                  100,
+                  111,
+                  110,
+                  97,
+                  116,
+                  111,
+                  114,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "target",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "send",
+      "discriminator": [
+        102,
+        251,
+        20,
+        187,
+        65,
+        75,
+        12,
+        69
+      ],
+      "accounts": [
+        {
+          "name": "donator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "donator_acc",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  111,
+                  110,
+                  97,
+                  116,
+                  101,
+                  95,
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  100,
+                  111,
+                  110,
+                  97,
+                  116,
+                  111,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "donate_platform"
+              },
+              {
+                "kind": "arg",
+                "path": "id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "donate_platform",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  111,
+                  110,
+                  97,
+                  116,
+                  101,
+                  95,
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "donate_platform.authority",
+                "account": "Donates"
+              }
+            ]
+          }
+        },
+        {
+          "name": "top_donators",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  111,
+                  112,
+                  95,
+                  100,
+                  111,
+                  110,
+                  97,
+                  116,
+                  111,
+                  114,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "donate_platform.authority",
+                "account": "Donates"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "id",
+          "type": "u64"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "withdraw",
+      "discriminator": [
+        183,
+        18,
+        70,
+        156,
+        148,
+        109,
+        161,
+        34
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "donate_platform"
+          ]
+        },
+        {
+          "name": "donate_platform",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  111,
+                  110,
+                  97,
+                  116,
+                  101,
+                  95,
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "donate_platform.authority",
+                "account": "Donates"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Donates",
+      "discriminator": [
+        163,
+        38,
+        29,
+        84,
+        45,
+        241,
+        237,
+        164
+      ]
+    },
+    {
+      "name": "Donator",
+      "discriminator": [
+        32,
+        79,
+        178,
+        227,
+        28,
+        91,
+        97,
+        22
+      ]
+    },
+    {
+      "name": "TopDonators",
+      "discriminator": [
+        85,
+        111,
+        136,
+        67,
+        175,
+        13,
+        129,
+        158
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "DonationEvent",
+      "discriminator": [
+        43,
+        125,
+        2,
+        48,
+        193,
+        140,
+        25,
+        191
+      ]
+    },
+    {
+      "name": "WithdrawEvent",
+      "discriminator": [
+        22,
+        9,
+        133,
+        26,
+        160,
+        44,
+        71,
+        192
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "ZeroLamports",
+      "msg": "Amount of lamports must be more than zero"
+    },
+    {
+      "code": 6001,
+      "name": "NoCollectedLamports",
+      "msg": "Impossible to withdraw. No lamports were collected"
+    },
+    {
+      "code": 6002,
+      "name": "TargetReached",
+      "msg": "The target was reached"
+    },
+    {
+      "code": 6003,
+      "name": "NoLamportsForRent",
+      "msg": "Impossible to withdraw. Not enough lamports to pay rent"
+    },
+    {
+      "code": 6004,
+      "name": "IDBiggerThanCounter",
+      "msg": "Passed ID is bigger than current ID counter"
+    }
+  ],
+  "types": [
+    {
+      "name": "Donates",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "target",
+            "type": "u64"
+          },
+          {
+            "name": "collected",
+            "type": "u64"
+          },
+          {
+            "name": "id_counter",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DonationEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "at",
+            "type": "i64"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "platform_after",
+            "type": "u64"
+          },
+          {
+            "name": "from",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Donator",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "address",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DonatorStruct",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "address",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TopDonators",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "donators",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "DonatorStruct"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "WithdrawEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "at",
+            "type": "i64"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ]
+}
