@@ -47,4 +47,4 @@ To deploy just run
 ![Preview](https://drive.google.com/uc?export=view&id=1iMzP4tUS5WI8Ntzx6WNTvGpv8XsYc7C1)
 
 ## Working Video 
-[![Video](https://img.youtube.com/vi/1CGSm5US3u0dUGLaITmCKRoMog2yAzIE2/0.jpg)](https://drive.google.com/uc?export=view&id=1CGSm5US3u0dUGLaITmCKRoMog2yAzIE2)
+<iframe src="https://drive.google.com/file/d/1CGSm5US3u0dUGLaITmCKRoMog2yAzIE2/preview" width="640" height="480"></iframe>
